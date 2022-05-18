@@ -23,12 +23,14 @@ streamlit.dataframe(my_fruit_list)
 
 import snowflake.connector
 
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("SELECT * from fruit_load_list")
-my_data_row = my_cur.fetchone()
-streamlit.text("Hthe fruit load list contains")
-streamlit.text(my_data_row)
+#my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+#my_cur = my_cnx.cursor()
+#my_cur.execute("SELECT * from fruit_load_list")
+#my_data_row = my_cur.fetchone()
+#streamlit.text("Hthe fruit load list contains")
+#streamlit.text(my_data_row)
 
+streamlit.write('tanks for adding ' , add_my_fruit)
 
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
 
